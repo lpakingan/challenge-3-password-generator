@@ -1,14 +1,14 @@
-//separate all the potential password variables into individual strings within an array by using .split()
+// separate all the potential password variables into individual strings within an array by using .split()
 var lowercaseSet = 'abcdefghijklmnopqrstuvwxyz'
 var uppercaseSet = lowercaseSet.toUpperCase().split("")
 lowercaseSet = lowercaseSet.split("")
 var numbersSet = '0123456789'.split("")
 var specialcharactersSet = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
 
-//the main function generatePassword that contains the random password generation process
+// the main function generatePassword that contains the random password generation process
 var generatePassword = function() {
-  //confirms that the user would like to continue with password generation
-  //if the user chooses Cancel, the process is ended
+  // confirms that the user would like to continue with password generation
+  // if the user chooses Cancel, the process is ended
   var welcomeMessage = confirm("Welcome to the password generator! Press Ok to continue");
 
   if (!welcomeMessage) {
@@ -16,13 +16,13 @@ var generatePassword = function() {
     return;
   }
 
-  //lengthInquiry prompts the user to input a number between 8 to 128 for their password
+  // lengthInquiry prompts the user to input a number between 8 to 128 for their password
   var lengthInquiry = function() {
     inquiry = prompt("How many characters would you like for your password? Please enter a number between 8 and 128 characters");
 
-    //checks whether the input is a number <8 or >128, is not a number, or empty
-    //if input fulfills one of these criteria, the user is alerted and lengthInquiry is repeated
-    //if input is good the number is returned
+    // checks whether the input is a number <8 or >128, is not a number, or empty
+    // if input fulfills one of these criteria, the user is alerted and lengthInquiry is repeated
+    // if input is good the number is returned
     while(inquiry < 8 || inquiry > 128 || isNaN(inquiry) || inquiry == "") {
       alert('Password length invalid! You must enter a number between 8 to 128.');
       lengthInquiry()
@@ -33,8 +33,9 @@ var generatePassword = function() {
 
   // creation of array for adding possible character sets
   var passwordCharacters = []
-  //whichCharacters prompts the user of what character types to include in their password
-  //if user says yes, the character set is concatenated to the empty array
+
+  // whichCharacters prompts the user of what character types to include in their password
+  // if user says yes, the character set is concatenated to the empty array
   var whichCharacters = function() {
     var wantLowercase = confirm("Would you like lowercase letters in your password? Press Ok if yes and Cancel if no.");
     if(wantLowercase) {
@@ -62,7 +63,11 @@ var generatePassword = function() {
   }
   whichCharacters()
 
+  // create empty string for adding random password characters to
   var generatedPassword = ""
+
+  // createPassword creates the randomized password based on the user input for # of characters (inquiry) and character types (passwordCharacters)
+  // will return the generated password of randomized elements that the user chose that will be passed out of the main function into the webpage
   var createPassword = function() {
     for(var i=0; i < inquiry; i++) {
       generatedPassword += passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)]
