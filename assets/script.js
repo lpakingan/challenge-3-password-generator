@@ -42,9 +42,15 @@ var generatePassword = function() {
     if(wantSpecialchar) {
       passwordCharacters = passwordCharacters.concat(specialcharactersSet)
     }
+
+// checks if the passwordCharacters array is 0; this would mean that the user chose 0 options
+// if user chose none of the options, then the whichCharacters function will restart
+    while(passwordCharacters.length === 0) {
+      alert('You must choose at least one type of character type for your password! Please select again.');
+      whichCharacters();
+    }
   }
   whichCharacters()
-  console.log(passwordCharacters)
 }
 
 // Get references to the #generate element
