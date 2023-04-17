@@ -27,11 +27,24 @@ var generatePassword = function() {
   var passwordCharacters = []
   var whichCharacters = function() {
     var wantLowercase = confirm("Would you like lowercase letters in your password? Press Ok if yes and Cancel if no.");
+    if(wantLowercase) {
+      passwordCharacters = passwordCharacters.concat(lowercaseSet)
+    }
     var wantUppercase = confirm("Would you like uppercase letters in your password? Press Ok if yes and Cancel if no.");
+    if(wantUppercase) {
+      passwordCharacters = passwordCharacters.concat(uppercaseSet)
+    }
     var wantNumbers = confirm("Would you like numbers in your password? Press Ok if yes and Cancel if no.");
+    if(wantNumbers) {
+      passwordCharacters = passwordCharacters.concat(numbersSet)
+    }
     var wantSpecialchar = confirm("Would you like special characters in your password? Press Ok if yes and Cancel if no.");
+    if(wantSpecialchar) {
+      passwordCharacters = passwordCharacters.concat(specialcharactersSet)
+    }
   }
   whichCharacters()
+  console.log(passwordCharacters)
 }
 
 // Get references to the #generate element
