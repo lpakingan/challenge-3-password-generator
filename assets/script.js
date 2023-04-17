@@ -5,6 +5,15 @@ lowercaseSet = lowercaseSet.split("")
 var numbersSet = '0123456789'.split("")
 var specialcharactersSet = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
 
+var generatePassword = function() {
+  var welcomeMessage = confirm("Welcome to the password generator! Press Ok to continue");
+
+  if (!welcomeMessage) {
+    alert('Password generator process cancelled. Press the button to restart!');
+    return;
+  }
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
