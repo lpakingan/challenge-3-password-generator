@@ -70,6 +70,7 @@ var generatePassword = function() {
     return generatedPassword;
   }
   createPassword()
+  return generatedPassword;
 }
 
 // Get references to the #generate element
