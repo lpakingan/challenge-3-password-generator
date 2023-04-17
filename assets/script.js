@@ -22,7 +22,16 @@ var generatePassword = function() {
     }
     return inquiry;
   }
-lengthInquiry()
+  lengthInquiry()
+
+  var passwordCharacters = []
+  var whichCharacters = function() {
+    var wantLowercase = confirm("Would you like lowercase letters in your password? Press Ok if yes and Cancel if no.");
+    var wantUppercase = confirm("Would you like uppercase letters in your password? Press Ok if yes and Cancel if no.");
+    var wantNumbers = confirm("Would you like numbers in your password? Press Ok if yes and Cancel if no.");
+    var wantSpecialchar = confirm("Would you like special characters in your password? Press Ok if yes and Cancel if no.");
+  }
+  whichCharacters()
 }
 
 // Get references to the #generate element
