@@ -1,5 +1,9 @@
 // Assignment code here
-
+var lowercaseSet = 'abcdefghijklmnopqrstuvwxyz'
+var uppercaseSet = lowercaseSet.toUpperCase().split("")
+lowercaseSet = lowercaseSet.split("")
+var numbersSet = '0123456789'.split("")
+var specialcharactersSet = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~".split("")
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
