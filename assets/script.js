@@ -12,6 +12,16 @@ var generatePassword = function() {
     alert('Password generator process cancelled. Press the button to restart!');
     return;
   }
+
+  var lengthInquiry = function() {
+    inquiry = prompt("How many characters would you like for your password? Please enter a number between 8 and 128 characters");
+
+    while(inquiry < 8 || inquiry > 128 || isNaN(inquiry) || inquiry == "") {
+      alert('Password length invalid! You must enter a number between 8 to 128.');
+      lengthInquiry()
+    }
+    return inquiry;
+  }
 }
 
 // Get references to the #generate element
