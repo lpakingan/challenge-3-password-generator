@@ -22,6 +22,7 @@ var generatePassword = function() {
     }
     return inquiry;
   }
+lengthInquiry()
 }
 
 // Get references to the #generate element
