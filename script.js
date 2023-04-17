@@ -61,6 +61,15 @@ var generatePassword = function() {
     }
   }
   whichCharacters()
+
+  var generatedPassword = ""
+  var createPassword = function() {
+    for(var i=0; i < inquiry; i++) {
+      generatedPassword += passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)]
+    }
+    return generatedPassword;
+  }
+  createPassword()
 }
 
 // Get references to the #generate element
